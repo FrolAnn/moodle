@@ -25,6 +25,7 @@
 
 $string['addmorechoices'] = 'Add more choices';
 $string['allowupdate'] = 'Allow choice to be updated';
+$string['field'] = 'fields';
 $string['allowmultiple'] = 'Allow more than one choice to be selected';
 $string['answered'] = 'Answered';
 $string['calendarend'] = '{$a} closes';
