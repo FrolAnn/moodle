@@ -665,7 +665,8 @@ class formslib_test_form extends moodleform {
         // Surely this is caused because we are storing some element information OUT
         // from the element (type...) at form level. Anyway, the method should do its
         // work better, no matter of that.
-        $this->repeat_elements($repeatels, 2, array('text' => array('type' => PARAM_RAW)), 'numtexts', 'addtexts');
+        $this->repeat_elements2($repeatels, 2, array('text' => array('type' => PARAM_RAW)), 
+            'numtexts', 'addtexts', 'morefield', get_string('numberofelements', 'form'));
 
         $this->_form->addElement('radio', 'radio', 'Label', 'Choice label', 'choice_value');
 
@@ -676,7 +677,8 @@ class formslib_test_form extends moodleform {
             $this->_form->createElement('radio', 'repeatradio', 'Choose {no}', 'One', 1),
             $this->_form->createElement('radio', 'repeatradio', 'Choose {no}', 'Two', 2),
         );
-        $this->repeat_elements($repeatels, 3, array(), 'numradios', 'addradios');
+        $this->repeat_elements2($repeatels, 3, array(), 'numradios', 'addradios', 
+            'morefield', get_string('numberofelements', 'form'));
     }
 }
 
@@ -724,7 +726,8 @@ class formslib_settype_debugging_repeat extends moodleform {
             $mform->createElement('text', 'repeattest', 'Type something')
         );
 
-        $this->repeat_elements($repeatels, 1, array(), 'numtexts', 'addtexts');
+        $this->repeat_elements2($repeatels, 1, array(), 'numtexts', 'addtexts', 
+            'morefield', get_string('numberofelements', 'form'));
     }
 }
 
@@ -739,7 +742,8 @@ class formslib_settype_debugging_repeat_ok extends moodleform {
             $mform->createElement('text', 'repeattest', 'Type something')
         );
 
-        $this->repeat_elements($repeatels, 2, array('repeattest' => array('type' => PARAM_RAW)), 'numtexts', 'addtexts');
+        $this->repeat_elements2($repeatels, 2, array('repeattest' => array('type' => PARAM_RAW)), 
+            'numtexts', 'addtexts', 'morefield', get_string('numberofelements', 'form'));
     }
 }
 
@@ -811,7 +815,8 @@ class formslib_settype_debugging_type_group_in_repeat extends moodleform {
             $mform->createElement('text', 'test2', 'test2', 'test')
         );
         $group = $mform->createElement('group', null, 'group1', $groupelements, null, false);
-        $this->repeat_elements(array($group), 1, array('test1' => array('type' => PARAM_INT)), 'hidden', 'button');
+        $this->repeat_elements2(array($group), 1, array('test1' => array('type' => PARAM_INT)), 
+            'hidden', 'button', 'morefield', get_string('numberofelements', 'form'));
     }
 }
 
@@ -826,7 +831,8 @@ class formslib_settype_debugging_type_namedgroup_in_repeat extends moodleform {
             $mform->createElement('text', 'test2', 'test2', 'test')
         );
         $group = $mform->createElement('group', 'namedgroup', 'group1', $groupelements, null, true);
-        $this->repeat_elements(array($group), 1, array('namedgroup[test1]' => array('type' => PARAM_INT)), 'hidden', 'button');
+        $this->repeat_elements2(array($group), 1, array('namedgroup[test1]' => array('type' => PARAM_INT)), 
+            'hidden', 'button', 'morefield', get_string('numberofelements', 'form'));
     }
 }
 
@@ -876,11 +882,13 @@ class formslib_clean_value extends moodleform {
 
         // Add a repetition.
         $repeat = $mform->createElement('text', 'repeatedel', 'repeatedel');
-        $this->repeat_elements(array($repeat), 2, array('repeatedel' => array('type' => PARAM_INT)), 'repeatable', 'add', 0);
+        $this->repeat_elements2(array($repeat), 2, array('repeatedel' => array('type' => PARAM_INT)), 
+            'repeatable', 'add', 'morefield', get_string('numberofelements', 'form'));
 
         // Add a repetition, with inheritance.
         $repeat = $mform->createElement('text', 'repeatedelinherit', 'repeatedelinherit');
-        $this->repeat_elements(array($repeat), 2, array(), 'repeatableinherit', 'add', 0);
+        $this->repeat_elements2(array($repeat), 2, array(), 'repeatableinherit', 'add', 
+            'morefield', get_string('numberofelements', 'form'));
         $mform->setType('repeatedelinherit', PARAM_INT);
 
         // Add an arbitrary named element.
@@ -905,8 +913,9 @@ class formslib_clean_value extends moodleform {
             $mform->createElement('text', 'repeatgroupel2', 'repeatgroupel2')
         );
         $group = $mform->createElement('group', 'repeatgroup', 'repeatgroup', $groupelements, null, false);
-        $this->repeat_elements(array($group), 2, array('repeatgroupel1' => array('type' => PARAM_INT),
-            'repeatgroupel2' => array('type' => PARAM_INT)), 'repeatablegroup', 'add', 0);
+        $this->repeat_elements2(array($group), 2, array('repeatgroupel1' => array('type' => PARAM_INT), 
+            'repeatgroupel2' => array('type' => PARAM_INT)), 'repeatablegroup', 'add', 
+		    'morefield', get_string('numberofelements', 'form'));
 
         // Add named group in repeated element.
         $groupelements = array(
@@ -914,8 +923,9 @@ class formslib_clean_value extends moodleform {
             $mform->createElement('text', 'repeatnamedgroupel2', 'repeatnamedgroupel2')
         );
         $group = $mform->createElement('group', 'repeatnamedgroup', 'repeatnamedgroup', $groupelements, null, true);
-        $this->repeat_elements(array($group), 2, array('repeatnamedgroup[repeatnamedgroupel1]' => array('type' => PARAM_INT),
-            'repeatnamedgroup[repeatnamedgroupel2]' => array('type' => PARAM_INT)), 'repeatablenamedgroup', 'add', 0);
+        $this->repeat_elements2(array($group), 2, array('repeatnamedgroup[repeatnamedgroupel1]' => array('type' => PARAM_INT),
+            'repeatnamedgroup[repeatnamedgroupel2]' => array('type' => PARAM_INT)), 'repeatablenamedgroup', 
+             'add', 'morefield', get_string('numberofelements', 'form'));
     }
 }
 
