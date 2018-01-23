@@ -47,6 +47,7 @@ $string['noneditableunittext'] = 'NON editable text of Unit No1';
 $string['nonvalidcharactersinnumber'] = 'NON valid characters in number';
 $string['notenoughanswers'] = 'You must enter at least one answer.';
 $string['nounitdisplay'] = 'No unit grading';
+$string['numberofunits'] = 'Number of blanks for units';
 $string['numericalmultiplier'] = 'Multiplier';
 $string['numericalmultiplier_help'] = 'The multiplier is the factor by which the correct numerical response will be multiplied.
 

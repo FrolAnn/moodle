@@ -25,6 +25,7 @@
 
 $string['addfields'] = 'Add {$a} field(s) to form';
 $string['advancedelement'] = 'Advanced element';
+$string['apply'] = 'Apply'; 
 $string['close'] = 'Close';
 $string['custom'] = 'Custom';
 $string['day'] = 'Day';
@@ -64,6 +65,7 @@ $string['noselection'] = 'No selection';
 $string['nosuggestions'] = 'No suggestions';
 $string['novalue'] = 'Nothing entered';
 $string['novalueclicktoset'] = 'Click to enter text';
+$string['numberofelements'] = 'Number of fields';
 $string['optional'] = 'Optional';
 $string['othersettings'] = 'Other settings';
 $string['passwordunmaskedithint'] = 'Edit password';

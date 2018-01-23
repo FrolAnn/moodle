@@ -549,6 +549,7 @@ $string['noview'] = 'Logged-in user is not allowed to view this quiz';
 $string['numattempts'] = '{$a->studentnum} {$a->studentstring} have made {$a->attemptnum} attempts';
 $string['numattemptsmade'] = '{$a} attempts made on this quiz';
 $string['numberabbr'] = '#';
+$string['numberoffeedbackfields'] = 'Number of blanks for feedbacks';
 $string['numerical'] = 'Numerical';
 $string['numquestionsx'] = 'Questions: {$a}';
 $string['oneminute'] = '1 minute';

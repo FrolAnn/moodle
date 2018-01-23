@@ -60,6 +60,7 @@ $string['marker_n'] = 'Marker {no}';
 $string['markers'] = 'Markers';
 $string['nolabel'] = 'No label text';
 $string['noofdrags'] = 'Number';
+$string['numberofmarkers'] = 'Number of blanks for markers';
 $string['pleasedragatleastonemarker'] = 'Your answer is not complete; you must place at least one marker on the image.';
 $string['pluginname'] = 'Drag and drop markers';
 $string['pluginname_help'] = 'Drag and drop markers require the respondent to drag text labels and drop them into defined drop zones on a background image.';

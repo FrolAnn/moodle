@@ -34,6 +34,7 @@ $string['errormissingchoice'] = 'Please check the question text: {$a} was not fo
 $string['errornoslots'] = 'The question text must contain placeholders like [[1]] to show where the missing words go.';
 $string['errorquestiontextblank'] = 'You must enter some question text.';
 $string['group'] = 'Group';
+$string['numberofchoices'] = 'Number of blanks for choices';
 $string['pleaseputananswerineachbox'] = 'Please put an answer in each box.';
 $string['pluginname'] = 'Select missing words';
 $string['pluginname_help'] = 'Select missing words questions require the respondent to select correct answers from dropdown menus. [[1]], [[2]], [[3]], ... are used as placeholders in the question text, with the correct answers specified as choice answers 1, 2, 3, ... respectively. Extra choice answers may be added to make the question harder. Choice answers may be grouped to restrict answers available in each dropdown menu.';
