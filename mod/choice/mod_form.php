@@ -67,8 +67,8 @@ class mod_choice_mod_form extends moodleform_mod {
 
         $mform->setType('optionid', PARAM_INT);
 
-        $this->repeat_elements($repeatarray, $repeatno,
-                    $repeateloptions, 'option_repeats', 'option_add_fields', 3, null, true);
+        $this->repeat_elements2($repeatarray, $repeatno, $repeateloptions, 'option_repeats', 
+		    'option_add_fields', 'morefield', get_string('numberofelements', 'form'), true);
 
         // Make the first option required
         if ($mform->elementExists('option[0]')) {

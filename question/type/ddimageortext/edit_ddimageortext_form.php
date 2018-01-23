@@ -132,10 +132,10 @@ class qtype_ddimageortext_edit_form extends qtype_ddtoimage_edit_form_base {
         $mform->addElement('advcheckbox', 'shuffleanswers', ' ',
                                 get_string('shuffleimages', 'qtype_'.$this->qtype()));
         $mform->setDefault('shuffleanswers', 0);
-        $this->repeat_elements($this->draggable_item($mform), $itemrepeatsatstart,
+        $this->repeat_elements2($this->draggable_item($mform), $itemrepeatsatstart,
                 $this->draggable_items_repeated_options(),
-                'noitems', 'additems', self::ADD_NUM_ITEMS,
-                get_string('addmoreimages', 'qtype_ddimageortext'), true);
+                'noitems', 'additems', 'moreitem',
+                get_string('numberofimages', 'qtype_ddimageortext'), true);
     }
 
     protected function draggable_item($mform) {

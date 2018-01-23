@@ -368,9 +368,9 @@ class mod_quiz_mod_form extends moodleform_mod {
         }
         $numfeedbacks = max($numfeedbacks, 1);
 
-        $nextel = $this->repeat_elements($repeatarray, $numfeedbacks - 1,
-                $repeatedoptions, 'boundary_repeats', 'boundary_add_fields', 3,
-                get_string('addmoreoverallfeedbacks', 'quiz'), true);
+        $nextel = $this->repeat_elements2($repeatarray, $numfeedbacks - 1,
+                $repeatedoptions, 'boundary_repeats', 'boundary_add_fields', 'morefeedbacks',
+                get_string('numberoffeedbackfields', 'quiz'), true);
 
         // Put some extra elements in before the button.
         $mform->insertElementBefore($mform->createElement('editor',

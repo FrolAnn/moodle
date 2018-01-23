@@ -161,9 +161,9 @@ class qtype_gapselect_edit_form_base extends question_edit_form {
 
         $repeatedoptions = $this->repeated_options();
         $mform->setType('answer', PARAM_RAW);
-        $this->repeat_elements($textboxgroup, $repeatsatstart, $repeatedoptions,
-                'noanswers', 'addanswers', QUESTION_NUMANS_ADD,
-                get_string('addmorechoiceblanks', 'qtype_gapselect'), true);
+        $this->repeat_elements2($textboxgroup, $repeatsatstart, $repeatedoptions,
+                'noanswers', 'addanswers', 'moretextbox',
+                get_string('numberofchoices', 'qtype_gapselect'), true);
     }
 
     /**
